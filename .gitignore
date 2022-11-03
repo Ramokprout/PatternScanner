@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+/.vs/dlltestpatternscan
+/x64
+/dlltestpatternscan.vcxproj.user
+/dlltestpatternscan.vcxproj.filters
+/dlltestpatternscan.vcxproj
+/dlltestpatternscan.sln

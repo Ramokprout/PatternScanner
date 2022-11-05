@@ -173,9 +173,11 @@ public:
 		DWORD offset = PatternScan(PESectionInfo.dwBaseAddress, PESectionInfo.dwSectionSize, bytes);
 		if (offset == 0) return 0;
 
-		if (!pattern.bRelative) return PESectionInfo.dwBaseAddress + offset;
+		auto result = PESectionInfo.dwBaseAddress + offset + pattern.skipBytes;
 
-		auto result = PESectionInfo.dwBaseAddress + offset;
+		if (!pattern.bRelative) return result;
+
+		
 #ifdef PATTERNSCAN_VERBOSE
 		printf("scan : secInfo.dwBaseAddress: %llu\n", PESectionInfo.dwBaseAddress);
 #endif
